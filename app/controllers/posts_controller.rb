@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.field(params[:id])
   end
 
   def new
@@ -25,6 +26,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:posts).permit(:title, :content)
+    params.require(:post).permit(:title, :content)
   end
 end
